@@ -3,4 +3,5 @@
     <button (click)="userLoggedIn = true">LogIn</button>
     <button (click)="userLoggedIn = false">LogOut</button>
 </div>
+{{userLoggedIn}}
 <app-child [loggedIn]="userLoggedIn"></app-child>
