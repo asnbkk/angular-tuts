@@ -4,4 +4,9 @@
     <button (click)="userLoggedIn = false">LogOut</button>
 </div>
 {{userLoggedIn}}
-<app-child [loggedIn]="userLoggedIn"></app-child>
+<app-child #child [loggedIn]="userLoggedIn"></app-child>
+<p>
+    this value is from child component: 
+    {{child.name}}
+</p>
+<button (click)="child.sayHello()">say Hello from child</button>

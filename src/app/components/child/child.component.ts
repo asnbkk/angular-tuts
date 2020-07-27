@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 export class ChildComponent implements OnChanges {
   @Input() loggedIn: boolean
   message: string
+  name: string = "Assan"
 
   // get loggedIn(): boolean {
   //   return this._loggedIn
@@ -35,6 +36,10 @@ export class ChildComponent implements OnChanges {
     else {
       this.message = "please, log in"
     }
+  }
+
+  sayHello() {
+    alert("hello Assan")
   }
 
 }
