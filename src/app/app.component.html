@@ -10,3 +10,5 @@
     {{child.name}}
 </p>
 <button (click)="child.sayHello()">say Hello from child</button>
+<hr>
+<app-child-second (sayHello)="sayHelloFromParent($event)"></app-child-second>

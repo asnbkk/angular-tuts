@@ -16,4 +16,8 @@ export class AppComponent implements AfterViewInit{
   ngAfterViewInit() {
     this.childComponentRef.message = "this message is from parent component"
   }
+
+  sayHelloFromParent(name: string) {
+    alert(`hello, ${name}, from child-second component`)
+  }
 }
