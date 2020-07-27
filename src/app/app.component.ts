@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterContentInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ChildComponent } from './components/child/child.component';
+import { InteractionService } from './services/interaction.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,18 @@ import { ChildComponent } from './components/child/child.component';
 export class AppComponent implements AfterViewInit{
   title = 'slider-example';
   public userLoggedIn: boolean = false
-  @ViewChild(ChildComponent) childComponentRef: ChildComponent
-  constructor() {
+
+  constructor(private _interactionService: InteractionService) {
   }
+  
+  helloStudent() {
+    this._interactionService.sendMessage('Good Morning')
+  }
+  appreciateStudent() {
+    this._interactionService.sendMessage('Well done')
+  }
+  
+  @ViewChild(ChildComponent) childComponentRef: ChildComponent
 
   ngAfterViewInit() {
     this.childComponentRef.message = "this message is from parent component"

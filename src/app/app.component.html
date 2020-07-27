@@ -1,14 +1,22 @@
-<h1>Parent Component</h1>
-<div>
-    <button (click)="userLoggedIn = true">LogIn</button>
-    <button (click)="userLoggedIn = false">LogOut</button>
+<div class="baby-angular">
+    <h1>Parent Component</h1>
+    <div>
+        <button (click)="userLoggedIn = true">LogIn</button>
+        <button (click)="userLoggedIn = false">LogOut</button>
+    </div>
+    {{userLoggedIn}}
+    <app-child #child [loggedIn]="userLoggedIn"></app-child>
+    <p>
+        this value is from child component: 
+        {{child.name}}
+    </p>
+    <button (click)="child.sayHello()">say Hello from child</button>
+    <hr>
+    <app-child-second (sayHello)="sayHelloFromParent($event)"></app-child-second>
 </div>
-{{userLoggedIn}}
-<app-child #child [loggedIn]="userLoggedIn"></app-child>
-<p>
-    this value is from child component: 
-    {{child.name}}
-</p>
-<button (click)="child.sayHello()">say Hello from child</button>
-<hr>
-<app-child-second (sayHello)="sayHelloFromParent($event)"></app-child-second>
+<div class="service-angular">
+    <h1>Teacher</h1>
+    <button (click)="helloStudent()">Hello Student</button>
+    <button (click)="appreciateStudent()">Appreciate Student</button>
+    <app-child-sutdent></app-child-sutdent>
+</div>
