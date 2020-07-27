@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, OnInit, AfterContentInit, ViewChild, AfterViewInit } from '@angular/core';
+import { ChildComponent } from './components/child/child.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements AfterViewInit{
   title = 'slider-example';
   public userLoggedIn: boolean = false
+  @ViewChild(ChildComponent) childComponentRef: ChildComponent
   constructor() {
   }
 
-  ngOnInit() {
-    
+  ngAfterViewInit() {
+    this.childComponentRef.message = "this message is from parent component"
   }
 }
